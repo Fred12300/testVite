@@ -10,6 +10,8 @@ document.querySelector('#app').innerHTML = `<div class="all">
         <div class="fiche"></div>
         <div class="display"></div>
     </div>`
+    
+let defaultChecked = ["name", "image", "summary"]
 
 let inputField = document.querySelector("#inputField")
 let resultsZone = document.querySelector(".results")
