@@ -16,7 +16,6 @@ let resultsZone = document.querySelector(".results")
 
 
 inputField.addEventListener("keyup", () => {
-    console.log("inputField " + inputField.value)
     resultsZone.innerHTML = ""
     sendRequest(inputField.value)
 })

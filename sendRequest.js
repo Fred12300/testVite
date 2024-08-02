@@ -1,7 +1,6 @@
 import { requestShow } from './getShows'
 export const sendRequest = async (val) => {const reponse = await fetch(`https://api.tvmaze.com/search/shows?q=${val}`)
 const series = await reponse.json()
-console.log(series)
 let resultsZone = document.querySelector(".results")
 series.map((x) => {
     let resultCard = document.createElement("div")

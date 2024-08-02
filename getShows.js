@@ -1,17 +1,14 @@
+import { affEle } from "./affEle"
 export const requestShow = async (showSelected) => {
     const reponse = await fetch(`https://api.tvmaze.com/singlesearch/shows?q=${showSelected}`)
     const selectedShow = await reponse.json()
-    console.log(selectedShow)
     let fiche = document.querySelector(".fiche")
     let displayZone = document.querySelector(".display")
-    let resultLink = document.querySelectorAll(".result")
     let checkedDefault = ["name", "image", "summary"]
 
     fiche.innerHTML = ""
     displayZone.innerHTML = ""
-    console.log(Object.keys(selectedShow))
                Object.keys(selectedShow).forEach((key)=>{
-                   console.log(key)
                    let oneKey = document.createElement("div")
                        oneKey.className ="oneKey"
                    displayZone.appendChild(oneKey)
@@ -19,19 +16,18 @@ export const requestShow = async (showSelected) => {
                        keyText.innerText = key
                    let checkBox = document.createElement("input")
                        checkBox.type = "checkbox"
-                       checkBox.className = key
+                       checkBox.className = `${key} checkbox`
                    if(checkedDefault.includes(key)){
                        checkBox.checked = "true"
                    }
                    oneKey.appendChild(checkBox)
                    oneKey.appendChild(keyText)
-                   checkBox.addEventListener("change", () => {affEle(
-
-                   )})
+                   checkBox.addEventListener("change", () => {affEle(selectedShow
+                )})
                })
 
-
-               let title = document.createElement("h1")
+            affEle(selectedShow)
+               /* let title = document.createElement("h1")
                    title.innerText = selectedShow.name
                fiche.appendChild(title)
                let image = document.createElement("img")
@@ -44,6 +40,6 @@ export const requestShow = async (showSelected) => {
                fiche.appendChild(image)
                let description = document.createElement("p")
                    description.innerHTML = selectedShow.summary
-               fiche.appendChild(description)
+               fiche.appendChild(description) */
                
 }
