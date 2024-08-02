@@ -1,4 +1,4 @@
-//let actualChecked = ["name", "image", "summary"]
+let actualChecked = ["name", "image", "summary"]
 export const affEle = (show,checkIt,checkBox) => {
     console.log("show " + show, "checkIt " + checkIt, "checkBox " + checkBox)
     let elem = document.createElement("div")
